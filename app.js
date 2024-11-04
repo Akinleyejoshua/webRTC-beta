@@ -3,7 +3,7 @@ const app = express();
 const port = 8000;
 const http = require("http");
 const server = http.createServer(app);
-const io = require("socket.io")(server, { cors: { origin: "https://ultrashare.vercel.app" } });
+const io = require("socket.io")(server, { cors: { origin: "https://ultrashare.vercel.app", methods: ["GET", "POST"] } });
 
 
 let rooms = {};
