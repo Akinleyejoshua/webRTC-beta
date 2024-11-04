@@ -81,7 +81,7 @@ io.sockets.on("connection", (socket) => {
     Object.values(rooms).forEach((value, key) => {
       if (value.broadcaster === socket.id) {
         console.log(`Broadcaster disconnected, closing room: ${key}`);
-        rooms.delete(key);
+        delete rooms[key]
         io.to(key).emit("broadcasterLeft");
       }
     });
