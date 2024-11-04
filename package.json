@@ -5,7 +5,7 @@
     "socket.io": "^4.7.2"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "name": "broadcaster",
   "version": "1.0.0",
