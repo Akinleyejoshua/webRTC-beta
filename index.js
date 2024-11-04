@@ -1,13 +1,10 @@
 const express = require("express");
 const app = express();
-const port = 8000;
+const port = 4000;
 const http = require("http");
 const server = http.createServer(app);
 const io = require("socket.io")(server, { cors: { origin: "*" } });
 
-app.get("/", (req, res) => {
-  res.send("API WORKING")
-})
 
 let rooms = {};
 
@@ -91,4 +88,9 @@ io.sockets.on("connection", (socket) => {
     });
   });
 });
+
+app.get("/", (req, res) => {
+  res.send("API WORKING");
+});
+
 server.listen(port, () => console.log(`Server is running on port ${port}`));
